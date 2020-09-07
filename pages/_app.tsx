@@ -3,7 +3,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { useState } from "react";
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
-import { Head } from "next/document";
+import Head from "next/head";
 
 function MyApp({ Component, pageProps }) {
   const [showingBanner, setShowingBanner] = useState(true);
