@@ -3,12 +3,20 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { useState } from "react";
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
+import { Head } from "next/document";
 
 function MyApp({ Component, pageProps }) {
   const [showingBanner, setShowingBanner] = useState(true);
 
   return (
     <>
+      <Head>
+        <title>Isaac Asimov</title>
+        <meta
+          name="description"
+          content="Isaac Asimov immigrated with his family from Russia to the United States and became a biochemistry professor while pursuing writing. He published his first novel, Pebble in the Sky, in 1950. An immensely prolific author who penned nearly 500 books, he published influential sci-fi works like I, Robot and the Foundation trilogy, as well as books in a variety of other genres."
+        />
+      </Head>
       {showingBanner && (
         <div className="z-50 flex flex-row flex-wrap items-center justify-center px-4 py-2 text-green-800 bg-green-200 shadow-inner sm:justify-between">
           <p className="text-center">
