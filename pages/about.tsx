@@ -1,28 +1,17 @@
-import {
-  getAllBookEntries,
-  getAllSeriesEntries,
-  getAboutPageConfig,
-  getLandingPageConfig,
-} from "../lib/api";
+import { getAboutPageConfig } from "../lib/api";
 import { InferGetStaticPropsType } from "next";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
 export const getStaticProps = async () => {
   return {
     props: {
-      books: await getAllBookEntries(),
-      series: await getAllSeriesEntries(),
       aboutPageConfig: await getAboutPageConfig(),
-      landingPageConfig: await getLandingPageConfig(),
     },
   };
 };
 
 function About({
-  books,
-  series,
   aboutPageConfig,
-  landingPageConfig,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <div className="max-w-6xl px-4 py-8 mx-auto space-y-8 sm:py-16">

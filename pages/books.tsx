@@ -1,9 +1,4 @@
-import {
-  getAllBookEntries,
-  getAllSeriesEntries,
-  getAboutPageConfig,
-  getLandingPageConfig,
-} from "../lib/api";
+import { getAllBookEntries, getAllSeriesEntries } from "../lib/api";
 import { InferGetStaticPropsType } from "next";
 import { IBookFields, ISeriesFields } from "../@types/generated/contentful";
 import { Entry } from "contentful";
@@ -15,8 +10,6 @@ export const getStaticProps = async () => {
     props: {
       books: await getAllBookEntries(),
       series: await getAllSeriesEntries(),
-      aboutPageConfig: await getAboutPageConfig(),
-      landingPageConfig: await getLandingPageConfig(),
     },
   };
 };
@@ -79,8 +72,6 @@ function Book({ book }: { book: Entry<IBookFields> }) {
 function Books({
   books,
   series,
-  aboutPageConfig,
-  landingPageConfig,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const serieslessBooks = books.filter(
     ({ sys: { id } }) =>

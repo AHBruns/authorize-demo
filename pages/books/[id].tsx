@@ -1,10 +1,5 @@
 import { GetStaticPaths, InferGetStaticPropsType } from "next";
-import {
-  getAboutPageConfig,
-  getLandingPageConfig,
-  getBookEntry,
-  getAllSeriesEntries,
-} from "../../lib/api";
+import { getBookEntry, getAllBookEntries } from "../../lib/api";
 import { useRouter } from "next/router";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { BuyLinks } from "../../components/BuyLinks";
@@ -20,26 +15,21 @@ export const getStaticProps = async ({
         id.startsWith("preview__") ? id.slice(9) : id,
         id.startsWith("preview__")
       ),
-      series: await getAllSeriesEntries(true),
-      aboutPageConfig: await getAboutPageConfig(true),
-      landingPageConfig: await getLandingPageConfig(true),
     },
+    revalidate: 1,
   };
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
-    paths: [],
+    paths: (await getAllBookEntries()).map((series) => ({
+      params: { id: series.sys.id },
+    })),
     fallback: true,
   };
 };
 
-function BookById({
-  book,
-  series,
-  aboutPageConfig,
-  landingPageConfig,
-}: InferGetStaticPropsType<typeof getStaticProps>) {
+function BookById({ book }: InferGetStaticPropsType<typeof getStaticProps>) {
   const router = useRouter();
 
   if (router.isFallback) return null;

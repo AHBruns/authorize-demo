@@ -1,19 +1,12 @@
 import About from "./about";
-import {
-  getAllBookEntries,
-  getAllSeriesEntries,
-  getAboutPageConfig,
-  getLandingPageConfig,
-} from "../lib/api";
+import { getAboutPageConfig } from "../lib/api";
 
 export const getStaticProps = async () => {
   return {
     props: {
-      books: await getAllBookEntries(true),
-      series: await getAllSeriesEntries(true),
       aboutPageConfig: await getAboutPageConfig(true),
-      landingPageConfig: await getLandingPageConfig(true),
     },
+    revalidate: 1,
   };
 };
 

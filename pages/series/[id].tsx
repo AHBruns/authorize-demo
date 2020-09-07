@@ -1,9 +1,4 @@
-import {
-  getAllBookEntries,
-  getAboutPageConfig,
-  getLandingPageConfig,
-  getSeriesEntry,
-} from "../../lib/api";
+import { getSeriesEntry, getAllSeriesEntries } from "../../lib/api";
 import { InferGetStaticPropsType, GetStaticPaths } from "next";
 import { useRouter } from "next/router";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
@@ -19,20 +14,20 @@ export const getStaticProps = async ({
 }) => {
   return {
     props: {
-      books: await getAllBookEntries(true),
       series: await getSeriesEntry(
         id.startsWith("preview__") ? id.slice(9) : id,
         id.startsWith("preview__")
       ),
-      aboutPageConfig: await getAboutPageConfig(true),
-      landingPageConfig: await getLandingPageConfig(true),
     },
+    revalidate: 1,
   };
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
-    paths: [],
+    paths: (await getAllSeriesEntries()).map((series) => ({
+      params: { id: series.sys.id },
+    })),
     fallback: true,
   };
 };
@@ -53,10 +48,7 @@ function Book({ book }: { book: Entry<IBookFields> }) {
 }
 
 function SeriesById({
-  books,
   series,
-  aboutPageConfig,
-  landingPageConfig,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const router = useRouter();
 

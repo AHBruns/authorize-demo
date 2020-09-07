@@ -1,9 +1,4 @@
-import {
-  getAllBookEntries,
-  getAllSeriesEntries,
-  getAboutPageConfig,
-  getLandingPageConfig,
-} from "../lib/api";
+import { getLandingPageConfig } from "../lib/api";
 import { InferGetStaticPropsType } from "next";
 import { BooksCarousel } from "../components/BooksCarousel";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
@@ -14,18 +9,12 @@ import { useRouter } from "next/router";
 export const getStaticProps = async () => {
   return {
     props: {
-      books: await getAllBookEntries(),
-      series: await getAllSeriesEntries(),
-      aboutPageConfig: await getAboutPageConfig(),
       landingPageConfig: await getLandingPageConfig(),
     },
   };
 };
 
 export default function Index({
-  books,
-  series,
-  aboutPageConfig,
   landingPageConfig,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const router = useRouter();
