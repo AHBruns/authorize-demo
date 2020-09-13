@@ -1,0 +1,3994 @@
+{
+  "contentTypes": [
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "sqsq3ermbgu4"
+          }
+        },
+        "id": "book",
+        "type": "ContentType",
+        "createdAt": "2020-09-05T21:51:51.925Z",
+        "updatedAt": "2020-09-07T18:50:38.994Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 13,
+        "publishedAt": "2020-09-07T18:50:38.994Z",
+        "firstPublishedAt": "2020-09-05T21:51:52.272Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5Egd87RC54jtuJfGcZj6Kg"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5Egd87RC54jtuJfGcZj6Kg"
+          }
+        },
+        "publishedCounter": 7,
+        "version": 14,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5Egd87RC54jtuJfGcZj6Kg"
+          }
+        }
+      },
+      "displayField": "title",
+      "name": "Book",
+      "description": "",
+      "fields": [
+        {
+          "id": "cover",
+          "name": "Cover",
+          "type": "Link",
+          "localized": false,
+          "required": true,
+          "validations": [
+            {
+              "linkMimetypeGroup": [
+                "image"
+              ]
+            }
+          ],
+          "disabled": false,
+          "omitted": false,
+          "linkType": "Asset"
+        },
+        {
+          "id": "title",
+          "name": "Title",
+          "type": "Symbol",
+          "localized": false,
+          "required": true,
+          "validations": [
+            {
+              "unique": true
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "authors",
+          "name": "Author(s)",
+          "type": "Array",
+          "localized": false,
+          "required": true,
+          "validations": [
+            {
+              "size": {
+                "min": 1
+              },
+              "message": "Well, someone must have written it!"
+            }
+          ],
+          "disabled": false,
+          "omitted": false,
+          "items": {
+            "type": "Symbol",
+            "validations": [
+            ]
+          }
+        },
+        {
+          "id": "tagLine",
+          "name": "Tag Line",
+          "type": "Text",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "description",
+          "name": "Description",
+          "type": "RichText",
+          "localized": false,
+          "required": false,
+          "validations": [
+            {
+              "enabledNodeTypes": [
+                "heading-1",
+                "heading-2",
+                "heading-3",
+                "heading-4",
+                "heading-5",
+                "heading-6",
+                "ordered-list",
+                "unordered-list",
+                "hr",
+                "blockquote",
+                "hyperlink"
+              ],
+              "message": "Only heading 1, heading 2, heading 3, heading 4, heading 5, heading 6, ordered list, unordered list, horizontal rule, quote, and link to Url nodes are allowed"
+            },
+            {
+              "nodes": {
+              }
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "buyLinks",
+          "name": "Buy Links",
+          "type": "Array",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false,
+          "items": {
+            "type": "Link",
+            "validations": [
+              {
+                "linkContentType": [
+                  "buyLink"
+                ]
+              }
+            ],
+            "linkType": "Entry"
+          }
+        }
+      ]
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "sqsq3ermbgu4"
+          }
+        },
+        "id": "series",
+        "type": "ContentType",
+        "createdAt": "2020-09-05T21:56:15.693Z",
+        "updatedAt": "2020-09-07T20:32:57.251Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 9,
+        "publishedAt": "2020-09-07T20:32:57.251Z",
+        "firstPublishedAt": "2020-09-05T21:56:16.083Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5Egd87RC54jtuJfGcZj6Kg"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5Egd87RC54jtuJfGcZj6Kg"
+          }
+        },
+        "publishedCounter": 5,
+        "version": 10,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5Egd87RC54jtuJfGcZj6Kg"
+          }
+        }
+      },
+      "displayField": "name",
+      "name": "Series",
+      "description": "",
+      "fields": [
+        {
+          "id": "name",
+          "name": "Name",
+          "type": "Symbol",
+          "localized": false,
+          "required": true,
+          "validations": [
+            {
+              "unique": true
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "tagLine",
+          "name": "Tag Line",
+          "type": "Text",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "description",
+          "name": "Description",
+          "type": "RichText",
+          "localized": false,
+          "required": false,
+          "validations": [
+            {
+              "enabledNodeTypes": [
+                "heading-1",
+                "heading-2",
+                "heading-3",
+                "heading-4",
+                "heading-5",
+                "heading-6",
+                "ordered-list",
+                "unordered-list",
+                "hr",
+                "blockquote",
+                "hyperlink"
+              ],
+              "message": "Only heading 1, heading 2, heading 3, heading 4, heading 5, heading 6, ordered list, unordered list, horizontal rule, quote, and link to Url nodes are allowed"
+            },
+            {
+              "nodes": {
+              }
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "books",
+          "name": "Books",
+          "type": "Array",
+          "localized": false,
+          "required": true,
+          "validations": [
+            {
+              "size": {
+                "min": 1
+              },
+              "message": "It's not much of a series if it doesn't have a single book in it!"
+            }
+          ],
+          "disabled": false,
+          "omitted": false,
+          "items": {
+            "type": "Link",
+            "validations": [
+              {
+                "linkContentType": [
+                  "book"
+                ]
+              }
+            ],
+            "linkType": "Entry"
+          }
+        },
+        {
+          "id": "splashArt",
+          "name": "Splash Art",
+          "type": "Link",
+          "localized": false,
+          "required": false,
+          "validations": [
+            {
+              "linkMimetypeGroup": [
+                "image"
+              ]
+            }
+          ],
+          "disabled": false,
+          "omitted": false,
+          "linkType": "Asset"
+        },
+        {
+          "id": "buyLinks",
+          "name": "Buy Links",
+          "type": "Array",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false,
+          "items": {
+            "type": "Link",
+            "validations": [
+              {
+                "linkContentType": [
+                  "buyLink"
+                ]
+              }
+            ],
+            "linkType": "Entry"
+          }
+        }
+      ]
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "sqsq3ermbgu4"
+          }
+        },
+        "id": "aboutPageConfig",
+        "type": "ContentType",
+        "createdAt": "2020-09-06T01:39:40.904Z",
+        "updatedAt": "2020-09-06T01:52:53.198Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 7,
+        "publishedAt": "2020-09-06T01:52:53.198Z",
+        "firstPublishedAt": "2020-09-06T01:40:46.913Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5Egd87RC54jtuJfGcZj6Kg"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5Egd87RC54jtuJfGcZj6Kg"
+          }
+        },
+        "publishedCounter": 3,
+        "version": 8,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5Egd87RC54jtuJfGcZj6Kg"
+          }
+        }
+      },
+      "displayField": "name",
+      "name": "About Page Config",
+      "description": "",
+      "fields": [
+        {
+          "id": "header",
+          "name": "Header",
+          "type": "Symbol",
+          "localized": false,
+          "required": true,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "headshot",
+          "name": "Headshot",
+          "type": "Link",
+          "localized": false,
+          "required": true,
+          "validations": [
+            {
+              "linkMimetypeGroup": [
+                "image"
+              ]
+            }
+          ],
+          "disabled": false,
+          "omitted": false,
+          "linkType": "Asset"
+        },
+        {
+          "id": "description",
+          "name": "Description",
+          "type": "RichText",
+          "localized": false,
+          "required": true,
+          "validations": [
+            {
+              "enabledNodeTypes": [
+                "heading-1",
+                "heading-2",
+                "heading-3",
+                "heading-4",
+                "heading-5",
+                "heading-6",
+                "ordered-list",
+                "unordered-list",
+                "hr",
+                "blockquote",
+                "hyperlink"
+              ],
+              "message": "Only heading 1, heading 2, heading 3, heading 4, heading 5, heading 6, ordered list, unordered list, horizontal rule, quote, and link to Url nodes are allowed"
+            },
+            {
+              "nodes": {
+              }
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "name",
+          "name": "Name",
+          "type": "Symbol",
+          "localized": false,
+          "required": true,
+          "validations": [
+            {
+              "unique": true
+            },
+            {
+              "in": [
+                "About Page Config"
+              ]
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        }
+      ]
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "sqsq3ermbgu4"
+          }
+        },
+        "id": "landingPageConfig",
+        "type": "ContentType",
+        "createdAt": "2020-09-06T02:08:00.105Z",
+        "updatedAt": "2020-09-06T02:46:45.826Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 7,
+        "publishedAt": "2020-09-06T02:46:45.826Z",
+        "firstPublishedAt": "2020-09-06T02:08:00.397Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5Egd87RC54jtuJfGcZj6Kg"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5Egd87RC54jtuJfGcZj6Kg"
+          }
+        },
+        "publishedCounter": 4,
+        "version": 8,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5Egd87RC54jtuJfGcZj6Kg"
+          }
+        }
+      },
+      "displayField": "name",
+      "name": "Landing Page Config",
+      "description": "",
+      "fields": [
+        {
+          "id": "callToAction",
+          "name": "Call To Action",
+          "type": "Symbol",
+          "localized": false,
+          "required": true,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "carouselBooks",
+          "name": "Carousel Books",
+          "type": "Array",
+          "localized": false,
+          "required": true,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false,
+          "items": {
+            "type": "Link",
+            "validations": [
+              {
+                "linkContentType": [
+                  "book"
+                ]
+              }
+            ],
+            "linkType": "Entry"
+          }
+        },
+        {
+          "id": "briefBio",
+          "name": "Brief Bio",
+          "type": "RichText",
+          "localized": false,
+          "required": false,
+          "validations": [
+            {
+              "enabledNodeTypes": [
+                "heading-1",
+                "heading-2",
+                "heading-3",
+                "heading-4",
+                "heading-5",
+                "heading-6",
+                "ordered-list",
+                "unordered-list",
+                "hr",
+                "blockquote",
+                "hyperlink"
+              ],
+              "message": "Only heading 1, heading 2, heading 3, heading 4, heading 5, heading 6, ordered list, unordered list, horizontal rule, quote, and link to Url nodes are allowed"
+            },
+            {
+              "nodes": {
+              }
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "newsletterSignup",
+          "name": "Newsletter Signup",
+          "type": "Boolean",
+          "localized": false,
+          "required": true,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "name",
+          "name": "Name",
+          "type": "Symbol",
+          "localized": false,
+          "required": true,
+          "validations": [
+            {
+              "unique": true
+            },
+            {
+              "in": [
+                "Landing Page Config"
+              ]
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "callToActionBackground",
+          "name": "Call To Action Background",
+          "type": "Link",
+          "localized": false,
+          "required": true,
+          "validations": [
+            {
+              "linkMimetypeGroup": [
+                "image"
+              ]
+            }
+          ],
+          "disabled": false,
+          "omitted": false,
+          "linkType": "Asset"
+        }
+      ]
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "sqsq3ermbgu4"
+          }
+        },
+        "id": "buyLink",
+        "type": "ContentType",
+        "createdAt": "2020-09-07T18:49:33.633Z",
+        "updatedAt": "2020-09-07T20:38:10.552Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 5,
+        "publishedAt": "2020-09-07T20:38:10.552Z",
+        "firstPublishedAt": "2020-09-07T18:49:33.975Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5Egd87RC54jtuJfGcZj6Kg"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5Egd87RC54jtuJfGcZj6Kg"
+          }
+        },
+        "publishedCounter": 3,
+        "version": 6,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5Egd87RC54jtuJfGcZj6Kg"
+          }
+        }
+      },
+      "displayField": "platform",
+      "name": "Buy Link",
+      "description": "",
+      "fields": [
+        {
+          "id": "platform",
+          "name": "Platform",
+          "type": "Symbol",
+          "localized": false,
+          "required": true,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "link",
+          "name": "Link",
+          "type": "Symbol",
+          "localized": false,
+          "required": true,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        }
+      ]
+    }
+  ],
+  "tags": [
+  ],
+  "editorInterfaces": [
+    {
+      "sys": {
+        "id": "default",
+        "type": "EditorInterface",
+        "space": {
+          "sys": {
+            "id": "sqsq3ermbgu4",
+            "type": "Link",
+            "linkType": "Space"
+          }
+        },
+        "version": 14,
+        "createdAt": "2020-09-05T21:51:52.425Z",
+        "createdBy": {
+          "sys": {
+            "id": "5Egd87RC54jtuJfGcZj6Kg",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "updatedAt": "2020-09-07T18:50:39.620Z",
+        "updatedBy": {
+          "sys": {
+            "id": "5Egd87RC54jtuJfGcZj6Kg",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "id": "book",
+            "type": "Link",
+            "linkType": "ContentType"
+          }
+        },
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        }
+      },
+      "sidebar": [
+        {
+          "settings": {
+          },
+          "widgetId": "publication-widget",
+          "widgetNamespace": "sidebar-builtin"
+        },
+        {
+          "settings": {
+          },
+          "widgetId": "content-preview-widget",
+          "widgetNamespace": "sidebar-builtin"
+        },
+        {
+          "settings": {
+          },
+          "widgetId": "incoming-links-widget",
+          "widgetNamespace": "sidebar-builtin"
+        },
+        {
+          "disabled": true,
+          "widgetId": "translation-widget",
+          "widgetNamespace": "sidebar-builtin"
+        },
+        {
+          "disabled": true,
+          "widgetId": "versions-widget",
+          "widgetNamespace": "sidebar-builtin"
+        },
+        {
+          "disabled": true,
+          "widgetId": "users-widget",
+          "widgetNamespace": "sidebar-builtin"
+        }
+      ],
+      "controls": [
+        {
+          "fieldId": "cover",
+          "widgetId": "assetLinkEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "title",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "authors",
+          "widgetId": "tagEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "tagLine",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "description",
+          "widgetId": "richTextEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "buyLinks",
+          "widgetId": "entryCardsEditor",
+          "widgetNamespace": "builtin"
+        }
+      ]
+    },
+    {
+      "sys": {
+        "id": "default",
+        "type": "EditorInterface",
+        "space": {
+          "sys": {
+            "id": "sqsq3ermbgu4",
+            "type": "Link",
+            "linkType": "Space"
+          }
+        },
+        "version": 10,
+        "createdAt": "2020-09-05T21:56:16.256Z",
+        "createdBy": {
+          "sys": {
+            "id": "5Egd87RC54jtuJfGcZj6Kg",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "updatedAt": "2020-09-07T20:32:57.710Z",
+        "updatedBy": {
+          "sys": {
+            "id": "5Egd87RC54jtuJfGcZj6Kg",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "id": "series",
+            "type": "Link",
+            "linkType": "ContentType"
+          }
+        },
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        }
+      },
+      "controls": [
+        {
+          "fieldId": "name",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "tagLine",
+          "widgetId": "multipleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "description",
+          "widgetId": "richTextEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "books",
+          "widgetId": "entryCardsEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "splashArt",
+          "widgetId": "assetLinkEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "buyLinks",
+          "settings": {
+            "bulkEditing": false,
+            "showLinkEntityAction": true,
+            "showCreateEntityAction": true
+          },
+          "widgetId": "entryCardsEditor",
+          "widgetNamespace": "builtin"
+        }
+      ]
+    },
+    {
+      "sys": {
+        "id": "default",
+        "type": "EditorInterface",
+        "space": {
+          "sys": {
+            "id": "sqsq3ermbgu4",
+            "type": "Link",
+            "linkType": "Space"
+          }
+        },
+        "version": 6,
+        "createdAt": "2020-09-06T01:40:47.030Z",
+        "createdBy": {
+          "sys": {
+            "id": "5Egd87RC54jtuJfGcZj6Kg",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "updatedAt": "2020-09-06T01:52:54.032Z",
+        "updatedBy": {
+          "sys": {
+            "id": "5Egd87RC54jtuJfGcZj6Kg",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "id": "aboutPageConfig",
+            "type": "Link",
+            "linkType": "ContentType"
+          }
+        },
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        }
+      },
+      "controls": [
+        {
+          "fieldId": "header",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "headshot",
+          "widgetId": "assetLinkEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "description",
+          "widgetId": "richTextEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "name",
+          "widgetId": "dropdown",
+          "widgetNamespace": "builtin"
+        }
+      ]
+    },
+    {
+      "sys": {
+        "id": "default",
+        "type": "EditorInterface",
+        "space": {
+          "sys": {
+            "id": "sqsq3ermbgu4",
+            "type": "Link",
+            "linkType": "Space"
+          }
+        },
+        "version": 8,
+        "createdAt": "2020-09-06T02:08:00.567Z",
+        "createdBy": {
+          "sys": {
+            "id": "5Egd87RC54jtuJfGcZj6Kg",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "updatedAt": "2020-09-06T02:46:46.404Z",
+        "updatedBy": {
+          "sys": {
+            "id": "5Egd87RC54jtuJfGcZj6Kg",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "id": "landingPageConfig",
+            "type": "Link",
+            "linkType": "ContentType"
+          }
+        },
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        }
+      },
+      "controls": [
+        {
+          "fieldId": "callToAction",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "carouselBooks",
+          "widgetId": "entryCardsEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "briefBio",
+          "widgetId": "richTextEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "newsletterSignup",
+          "settings": {
+            "trueLabel": "Showing",
+            "falseLabel": "Hidden"
+          },
+          "widgetId": "boolean",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "name",
+          "widgetId": "dropdown",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "callToActionBackground",
+          "widgetId": "assetLinkEditor",
+          "widgetNamespace": "builtin"
+        }
+      ]
+    },
+    {
+      "sys": {
+        "id": "default",
+        "type": "EditorInterface",
+        "space": {
+          "sys": {
+            "id": "sqsq3ermbgu4",
+            "type": "Link",
+            "linkType": "Space"
+          }
+        },
+        "version": 6,
+        "createdAt": "2020-09-07T18:49:34.118Z",
+        "createdBy": {
+          "sys": {
+            "id": "5Egd87RC54jtuJfGcZj6Kg",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "updatedAt": "2020-09-07T20:38:11.042Z",
+        "updatedBy": {
+          "sys": {
+            "id": "5Egd87RC54jtuJfGcZj6Kg",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "id": "buyLink",
+            "type": "Link",
+            "linkType": "ContentType"
+          }
+        },
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        }
+      },
+      "controls": [
+        {
+          "fieldId": "platform",
+          "settings": {
+            "helpText": "Displayed as uppercase."
+          },
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "link",
+          "settings": {
+            "helpText": "I use the exact link you give me. So, if you want an affiliate link you've got to build it yourself."
+          },
+          "widgetId": "urlEditor",
+          "widgetNamespace": "builtin"
+        }
+      ]
+    }
+  ],
+  "entries": [
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "sqsq3ermbgu4"
+          }
+        },
+        "id": "3aWAwWCkJS5YMAchtVjUMs",
+        "type": "Entry",
+        "createdAt": "2020-09-05T22:02:02.476Z",
+        "updatedAt": "2020-09-06T17:38:05.036Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 21,
+        "publishedAt": "2020-09-06T17:38:05.036Z",
+        "firstPublishedAt": "2020-09-05T22:10:34.319Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5Egd87RC54jtuJfGcZj6Kg"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5Egd87RC54jtuJfGcZj6Kg"
+          }
+        },
+        "publishedCounter": 3,
+        "version": 22,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5Egd87RC54jtuJfGcZj6Kg"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "book"
+          }
+        }
+      },
+      "fields": {
+        "cover": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "1GE0Qq4uDAPsq2fRJgNkxC"
+            }
+          }
+        },
+        "title": {
+          "en-US": "Foundation"
+        },
+        "authors": {
+          "en-US": [
+            "Isaac Asimov"
+          ]
+        },
+        "description": {
+          "en-US": {
+            "data": {
+            },
+            "content": [
+              {
+                "data": {
+                },
+                "content": [
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                    ],
+                    "value": "Foundation is a science fiction novel by American writer Isaac Asimov. It is the first published in his Foundation Trilogy (later expanded into the Foundation Series). Foundation is a cycle of five interrelated short stories, first published as a single book by Gnome Press in 1951.",
+                    "nodeType": "text"
+                  }
+                ],
+                "nodeType": "paragraph"
+              }
+            ],
+            "nodeType": "document"
+          }
+        }
+      }
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "sqsq3ermbgu4"
+          }
+        },
+        "id": "3VkYXhwsK0yC9kSsTTnHzj",
+        "type": "Entry",
+        "createdAt": "2020-09-05T23:26:23.207Z",
+        "updatedAt": "2020-09-06T17:55:50.674Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 7,
+        "publishedAt": "2020-09-06T17:55:50.674Z",
+        "firstPublishedAt": "2020-09-05T23:27:33.193Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5Egd87RC54jtuJfGcZj6Kg"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5Egd87RC54jtuJfGcZj6Kg"
+          }
+        },
+        "publishedCounter": 2,
+        "version": 8,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5Egd87RC54jtuJfGcZj6Kg"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "book"
+          }
+        }
+      },
+      "fields": {
+        "cover": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "2o6tIeHH1KmMrf9cTORc4S"
+            }
+          }
+        },
+        "title": {
+          "en-US": "Foundation and Empire"
+        },
+        "authors": {
+          "en-US": [
+            "Isaac Asimov"
+          ]
+        },
+        "description": {
+          "en-US": {
+            "data": {
+            },
+            "content": [
+              {
+                "data": {
+                },
+                "content": [
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                    ],
+                    "value": "Foundation and Empire is a science fiction novel by American writer Isaac Asimov originally published by Gnome Press in 1952. It is the second book in the Foundation Series, and the fourth in the in-universe chronology. It takes place in two parts, originally published as separate novellas.",
+                    "nodeType": "text"
+                  }
+                ],
+                "nodeType": "paragraph"
+              }
+            ],
+            "nodeType": "document"
+          }
+        }
+      }
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "sqsq3ermbgu4"
+          }
+        },
+        "id": "49xcIThBGyskgabU5X0rr0",
+        "type": "Entry",
+        "createdAt": "2020-09-05T23:28:26.472Z",
+        "updatedAt": "2020-09-06T17:56:24.572Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 7,
+        "publishedAt": "2020-09-06T17:56:24.572Z",
+        "firstPublishedAt": "2020-09-05T23:28:58.877Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5Egd87RC54jtuJfGcZj6Kg"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5Egd87RC54jtuJfGcZj6Kg"
+          }
+        },
+        "publishedCounter": 2,
+        "version": 8,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5Egd87RC54jtuJfGcZj6Kg"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "book"
+          }
+        }
+      },
+      "fields": {
+        "cover": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "1hsxSmpt8pNqyS8DulO7Wq"
+            }
+          }
+        },
+        "title": {
+          "en-US": "Second Foundation"
+        },
+        "authors": {
+          "en-US": [
+            "Isaac Asimov"
+          ]
+        },
+        "description": {
+          "en-US": {
+            "data": {
+            },
+            "content": [
+              {
+                "data": {
+                },
+                "content": [
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                    ],
+                    "value": "Second Foundation consists of two previously published novellas originally published in Astounding Magazine (with different titles) between 1948 and 1950, making this the third volume in Asimov's Foundation series. The Foundation series is often regarded as one of Isaac Asimov's best works, along with his Robot series.",
+                    "nodeType": "text"
+                  }
+                ],
+                "nodeType": "paragraph"
+              }
+            ],
+            "nodeType": "document"
+          }
+        }
+      }
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "sqsq3ermbgu4"
+          }
+        },
+        "id": "5I3ujgxjWZ94Jvf7CHMGnG",
+        "type": "Entry",
+        "createdAt": "2020-09-05T23:29:14.086Z",
+        "updatedAt": "2020-09-07T20:40:28.500Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 21,
+        "publishedAt": "2020-09-07T20:40:28.500Z",
+        "firstPublishedAt": "2020-09-05T23:29:44.077Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5Egd87RC54jtuJfGcZj6Kg"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5Egd87RC54jtuJfGcZj6Kg"
+          }
+        },
+        "publishedCounter": 8,
+        "version": 22,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5Egd87RC54jtuJfGcZj6Kg"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "series"
+          }
+        }
+      },
+      "fields": {
+        "name": {
+          "en-US": "The Foundation Novels"
+        },
+        "tagLine": {
+          "en-US": "Violence is the last refuge of the incompetent."
+        },
+        "description": {
+          "en-US": {
+            "data": {
+            },
+            "content": [
+              {
+                "data": {
+                },
+                "content": [
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                    ],
+                    "value": "The Foundation series is a science fiction book series written by American author Isaac Asimov. First collected in 1951, for thirty years the series was a trilogy: Foundation, Foundation and Empire, and Second Foundation. It won the one-time Hugo Award for \"Best All-Time Series\" in 1966.",
+                    "nodeType": "text"
+                  }
+                ],
+                "nodeType": "paragraph"
+              }
+            ],
+            "nodeType": "document"
+          }
+        },
+        "books": {
+          "en-US": [
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "1B9ooYoJIL2LInuFAfjcOk"
+              }
+            },
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "3l28Mu3SV7qjp4WVT3B4Al"
+              }
+            },
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "3aWAwWCkJS5YMAchtVjUMs"
+              }
+            },
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "3VkYXhwsK0yC9kSsTTnHzj"
+              }
+            },
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "49xcIThBGyskgabU5X0rr0"
+              }
+            },
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "2gddKtgnfJTi4Gwg1hg8aV"
+              }
+            },
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "YuFnLybrJU28tn5ZFFrfD"
+              }
+            }
+          ]
+        },
+        "splashArt": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "5YDgxNC12fWYzZLCXBJRRk"
+            }
+          }
+        },
+        "buyLinks": {
+          "en-US": [
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "12067JIltFpCMAnrrsIkNd"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "sqsq3ermbgu4"
+          }
+        },
+        "id": "374R0qmiImcJXDkwwmYdqn",
+        "type": "Entry",
+        "createdAt": "2020-09-06T01:42:36.774Z",
+        "updatedAt": "2020-09-07T21:55:07.752Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 37,
+        "publishedAt": "2020-09-07T21:55:07.752Z",
+        "firstPublishedAt": "2020-09-06T01:49:54.818Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5Egd87RC54jtuJfGcZj6Kg"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5Egd87RC54jtuJfGcZj6Kg"
+          }
+        },
+        "publishedCounter": 6,
+        "version": 38,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5Egd87RC54jtuJfGcZj6Kg"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "aboutPageConfig"
+          }
+        }
+      },
+      "fields": {
+        "header": {
+          "en-US": "About Isaac Asimov"
+        },
+        "headshot": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "3SwgpRhiKOvdtQQmgXjijU"
+            }
+          }
+        },
+        "description": {
+          "en-US": {
+            "data": {
+            },
+            "content": [
+              {
+                "data": {
+                },
+                "content": [
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                    ],
+                    "value": "Scholar Isaac Asimov was one of the 20th century's most prolific writers, writing in many genres. He was known for sci-fi works like 'Foundation' and 'I, Robot.'",
+                    "nodeType": "text"
+                  }
+                ],
+                "nodeType": "paragraph"
+              },
+              {
+                "data": {
+                },
+                "content": [
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                    ],
+                    "value": "Who Was Isaac Asimov?",
+                    "nodeType": "text"
+                  }
+                ],
+                "nodeType": "heading-2"
+              },
+              {
+                "data": {
+                },
+                "content": [
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                    ],
+                    "value": "Isaac Asimov immigrated with his family from Russia to the United States and became a biochemistry professor while pursuing writing. He published his first novel, ",
+                    "nodeType": "text"
+                  },
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                      {
+                        "type": "italic"
+                      }
+                    ],
+                    "value": "Pebble in the Sky",
+                    "nodeType": "text"
+                  },
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                    ],
+                    "value": ", in 1950. An immensely prolific author who penned nearly 500 books, he published influential sci-fi works like ",
+                    "nodeType": "text"
+                  },
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                      {
+                        "type": "italic"
+                      }
+                    ],
+                    "value": "I, Robot",
+                    "nodeType": "text"
+                  },
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                    ],
+                    "value": " and the ",
+                    "nodeType": "text"
+                  },
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                      {
+                        "type": "italic"
+                      }
+                    ],
+                    "value": "Foundation ",
+                    "nodeType": "text"
+                  },
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                    ],
+                    "value": "trilogy, as well as books in a variety of other genres.",
+                    "nodeType": "text"
+                  }
+                ],
+                "nodeType": "paragraph"
+              },
+              {
+                "data": {
+                },
+                "content": [
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                    ],
+                    "value": "Early Life and Education",
+                    "nodeType": "text"
+                  }
+                ],
+                "nodeType": "heading-2"
+              },
+              {
+                "data": {
+                },
+                "content": [
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                    ],
+                    "value": "Isaac Asimov was born Isaak Yudovick Ozimov on January 2, 1920, in Petrovichi, Russia, to Anna Rachel Berman and Judah Ozimov. The family immigrated to the United States when Asimov was a toddler, settling into the East New York section of Brooklyn. (Around this time, the family name was changed to Asimov.)",
+                    "nodeType": "text"
+                  }
+                ],
+                "nodeType": "paragraph"
+              },
+              {
+                "data": {
+                },
+                "content": [
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                    ],
+                    "value": "Judah owned a series of candy shops and called upon his son to work in the stores as a youngster. Isaac Asimov was fond of learning at a young age, having taught himself to read by the age of 5; he learned Yiddish soon after, and graduated from high school at 15 to enter Columbia University. He earned his Bachelor of Science degree in 1939 and went on to get his M.A. and Ph.D. from the same institution. In 1942, he wed Gertrude Blugerman.",
+                    "nodeType": "text"
+                  }
+                ],
+                "nodeType": "paragraph"
+              },
+              {
+                "data": {
+                },
+                "content": [
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                    ],
+                    "value": "In 1949, Asimov began a stint at Boston University School of Medicine, where he was hired as an associate professor of biochemistry in 1955. He eventually became a professor at the university by the late 1970s, though by that time he'd given up full-time teaching to do occasional lectures.",
+                    "nodeType": "text"
+                  }
+                ],
+                "nodeType": "paragraph"
+              },
+              {
+                "data": {
+                },
+                "content": [
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                    ],
+                    "value": "'I, Robot' and 'Foundation'",
+                    "nodeType": "text"
+                  }
+                ],
+                "nodeType": "heading-2"
+              },
+              {
+                "data": {
+                },
+                "content": [
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                    ],
+                    "value": "Yet even with his impeccable academic credentials, writing for general readers was to be the professor's passion. Asimov's first short story to be sold, \"Marooned Off Vesta,\" was published in ",
+                    "nodeType": "text"
+                  },
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                      {
+                        "type": "italic"
+                      }
+                    ],
+                    "value": "Amazing Stories",
+                    "nodeType": "text"
+                  },
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                    ],
+                    "value": " in 1938. Years later, he published his first book in 1950, the sci-fi novel ",
+                    "nodeType": "text"
+                  },
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                      {
+                        "type": "italic"
+                      }
+                    ],
+                    "value": "Pebble in the Sky",
+                    "nodeType": "text"
+                  },
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                    ],
+                    "value": "—the first in a line of titles that would mark a highly prolific writing career.",
+                    "nodeType": "text"
+                  }
+                ],
+                "nodeType": "paragraph"
+              },
+              {
+                "data": {
+                },
+                "content": [
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                    ],
+                    "value": "An influential vision came with another 1950 release, the story collection ",
+                    "nodeType": "text"
+                  },
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                      {
+                        "type": "italic"
+                      }
+                    ],
+                    "value": "I, Robot",
+                    "nodeType": "text"
+                  },
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                    ],
+                    "value": ", which looked at human/construct relationships and featured the Three Laws of Robotics. (The narrative would be adapted for a blockbuster starring Will Smith decades later.) Asimov would later be credited with coming up with the term \"robotics.\"",
+                    "nodeType": "text"
+                  }
+                ],
+                "nodeType": "paragraph"
+              },
+              {
+                "data": {
+                },
+                "content": [
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                    ],
+                    "value": "The year 1951 saw the release of another seminal work, ",
+                    "nodeType": "text"
+                  },
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                      {
+                        "type": "italic"
+                      }
+                    ],
+                    "value": "Foundation",
+                    "nodeType": "text"
+                  },
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                    ],
+                    "value": ", a novel that looked at the end of the Galactic Empire and a statistical method of predicting outcomes known as \"psychohistory.\" The story was followed by two more installations, ",
+                    "nodeType": "text"
+                  },
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                      {
+                        "type": "italic"
+                      }
+                    ],
+                    "value": "Foundation and Empire ",
+                    "nodeType": "text"
+                  },
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                    ],
+                    "value": "(1952) and ",
+                    "nodeType": "text"
+                  },
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                      {
+                        "type": "italic"
+                      }
+                    ],
+                    "value": "Second Foundation ",
+                    "nodeType": "text"
+                  },
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                    ],
+                    "value": "(1953), with the series continuing into the 1980s.",
+                    "nodeType": "text"
+                  }
+                ],
+                "nodeType": "paragraph"
+              },
+              {
+                "data": {
+                },
+                "content": [
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                    ],
+                    "value": "Prolific and Varied Writer",
+                    "nodeType": "text"
+                  }
+                ],
+                "nodeType": "heading-2"
+              },
+              {
+                "data": {
+                },
+                "content": [
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                    ],
+                    "value": "Asimov was also known for writing books on a wide variety of subjects outside of science fiction, taking on topics like astronomy, biology, math, religion and literary biography. A small sample of notable titles include ",
+                    "nodeType": "text"
+                  },
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                      {
+                        "type": "italic"
+                      }
+                    ],
+                    "value": "The Human Body",
+                    "nodeType": "text"
+                  },
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                    ],
+                    "value": " (1963), ",
+                    "nodeType": "text"
+                  },
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                      {
+                        "type": "italic"
+                      }
+                    ],
+                    "value": "Asimov's Guide to the Bible",
+                    "nodeType": "text"
+                  },
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                    ],
+                    "value": " (1969), the mystery ",
+                    "nodeType": "text"
+                  },
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                      {
+                        "type": "italic"
+                      }
+                    ],
+                    "value": "Murder at the AB A",
+                    "nodeType": "text"
+                  },
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                    ],
+                    "value": " (1976) and his 1979 autobiography, ",
+                    "nodeType": "text"
+                  },
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                      {
+                        "type": "italic"
+                      }
+                    ],
+                    "value": "In Memory Yet Green",
+                    "nodeType": "text"
+                  },
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                    ],
+                    "value": ". He spent most of his time in solitude, working on manuscripts and having to be persuaded by family to take breaks and vacations. By December 1984, he had written 300 books, ultimately writing nearly 500.",
+                    "nodeType": "text"
+                  }
+                ],
+                "nodeType": "paragraph"
+              },
+              {
+                "data": {
+                },
+                "content": [
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                    ],
+                    "value": "Death and Legacy",
+                    "nodeType": "text"
+                  }
+                ],
+                "nodeType": "heading-2"
+              },
+              {
+                "data": {
+                },
+                "content": [
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                    ],
+                    "value": "Asimov died in New York City on April 6, 1992, at the age of 72, from heart and kidney failure. He had dealt privately with a diagnosis of AIDS, which he'd contracted from a blood transfusion during bypass surgery. He was survived by two children and his second wife, Janet Jeppson.",
+                    "nodeType": "text"
+                  }
+                ],
+                "nodeType": "paragraph"
+              },
+              {
+                "data": {
+                },
+                "content": [
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                    ],
+                    "value": "Over the course of his career, Asimov won several Hugo and Nebula Awards, as well as received accolades from science institutions. He stated during a televised interview that he hoped his ideas would live on past his death; his wish has come to fruition, with the world continuing to contemplate his literary and scientific legacies.",
+                    "nodeType": "text"
+                  }
+                ],
+                "nodeType": "paragraph"
+              }
+            ],
+            "nodeType": "document"
+          }
+        },
+        "name": {
+          "en-US": "About Page Config"
+        }
+      }
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "sqsq3ermbgu4"
+          }
+        },
+        "id": "7GHPCQ6CQoD7kzHqlKwElL",
+        "type": "Entry",
+        "createdAt": "2020-09-06T02:21:00.193Z",
+        "updatedAt": "2020-09-07T21:42:29.622Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 18,
+        "publishedAt": "2020-09-07T21:42:29.622Z",
+        "firstPublishedAt": "2020-09-06T02:23:55.146Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5Egd87RC54jtuJfGcZj6Kg"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5Egd87RC54jtuJfGcZj6Kg"
+          }
+        },
+        "publishedCounter": 4,
+        "version": 19,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5Egd87RC54jtuJfGcZj6Kg"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "landingPageConfig"
+          }
+        }
+      },
+      "fields": {
+        "callToAction": {
+          "en-US": "Welcome To The Home Of Isaac Asimov"
+        },
+        "carouselBooks": {
+          "en-US": [
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "3aWAwWCkJS5YMAchtVjUMs"
+              }
+            },
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "3VkYXhwsK0yC9kSsTTnHzj"
+              }
+            },
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "49xcIThBGyskgabU5X0rr0"
+              }
+            }
+          ]
+        },
+        "briefBio": {
+          "en-US": {
+            "data": {
+            },
+            "content": [
+              {
+                "data": {
+                },
+                "content": [
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                    ],
+                    "value": "Isaac Asimov was an American writer and professor of biochemistry at Boston University. He was known for his works of science fiction and popular science. Asimov was a prolific writer who wrote or edited more than 500 books and an estimated 90,000 letters and postcards.",
+                    "nodeType": "text"
+                  }
+                ],
+                "nodeType": "paragraph"
+              }
+            ],
+            "nodeType": "document"
+          }
+        },
+        "newsletterSignup": {
+          "en-US": true
+        },
+        "name": {
+          "en-US": "Landing Page Config"
+        },
+        "callToActionBackground": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "4DVCCGgbpACEmYbvVczUHM"
+            }
+          }
+        }
+      }
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "sqsq3ermbgu4"
+          }
+        },
+        "id": "1B9ooYoJIL2LInuFAfjcOk",
+        "type": "Entry",
+        "createdAt": "2020-09-07T00:18:26.318Z",
+        "updatedAt": "2020-09-07T21:57:35.321Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 16,
+        "publishedAt": "2020-09-07T21:57:35.321Z",
+        "firstPublishedAt": "2020-09-07T00:46:33.728Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5Egd87RC54jtuJfGcZj6Kg"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5Egd87RC54jtuJfGcZj6Kg"
+          }
+        },
+        "publishedCounter": 4,
+        "version": 17,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5Egd87RC54jtuJfGcZj6Kg"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "book"
+          }
+        }
+      },
+      "fields": {
+        "cover": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "6av1oeCKiXrOhPZPTlo8He"
+            }
+          }
+        },
+        "title": {
+          "en-US": "Prelude to Foundation"
+        },
+        "authors": {
+          "en-US": [
+            "Isaac Asimov"
+          ]
+        },
+        "description": {
+          "en-US": {
+            "data": {
+            },
+            "content": [
+              {
+                "data": {
+                },
+                "content": [
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                    ],
+                    "value": "Prelude to Foundation is a novel by American writer Isaac Asimov, published in 1988. For the first time, Asimov chronicles the fictional life of Hari Seldon, the man who invented psychohistory and the intellectual hero of the series. The novel was nominated for the Locus Award.",
+                    "nodeType": "text"
+                  }
+                ],
+                "nodeType": "paragraph"
+              },
+              {
+                "data": {
+                },
+                "content": [
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                    ],
+                    "value": "",
+                    "nodeType": "text"
+                  }
+                ],
+                "nodeType": "paragraph"
+              },
+              {
+                "data": {
+                },
+                "content": [
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                    ],
+                    "value": "hey dad",
+                    "nodeType": "text"
+                  }
+                ],
+                "nodeType": "paragraph"
+              }
+            ],
+            "nodeType": "document"
+          }
+        },
+        "buyLinks": {
+          "en-US": [
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "1tk3wWt2WenkhRH5J4O5KQ"
+              }
+            },
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "6sK0lX4pqEH3Mm7ogl3L21"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "sqsq3ermbgu4"
+          }
+        },
+        "id": "3l28Mu3SV7qjp4WVT3B4Al",
+        "type": "Entry",
+        "createdAt": "2020-09-07T00:53:08.329Z",
+        "updatedAt": "2020-09-07T00:54:26.266Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 5,
+        "publishedAt": "2020-09-07T00:54:26.266Z",
+        "firstPublishedAt": "2020-09-07T00:54:26.266Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5Egd87RC54jtuJfGcZj6Kg"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5Egd87RC54jtuJfGcZj6Kg"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 6,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5Egd87RC54jtuJfGcZj6Kg"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "book"
+          }
+        }
+      },
+      "fields": {
+        "cover": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "4O50SXWxvMBVFdoQo4RhW8"
+            }
+          }
+        },
+        "title": {
+          "en-US": "Forward the Foundation"
+        },
+        "authors": {
+          "en-US": [
+            "Isaac Asimov"
+          ]
+        },
+        "description": {
+          "en-US": {
+            "data": {
+            },
+            "content": [
+              {
+                "data": {
+                },
+                "content": [
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                    ],
+                    "value": "Forward the Foundation is a novel by American writer Isaac Asimov, published posthumously in 1993. It is the second of two prequels to the Foundation Series. It is written in much the same style as the original novel Foundation, a novel composed of chapters with long intervals in between.",
+                    "nodeType": "text"
+                  }
+                ],
+                "nodeType": "paragraph"
+              }
+            ],
+            "nodeType": "document"
+          }
+        }
+      }
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "sqsq3ermbgu4"
+          }
+        },
+        "id": "2gddKtgnfJTi4Gwg1hg8aV",
+        "type": "Entry",
+        "createdAt": "2020-09-07T01:02:29.750Z",
+        "updatedAt": "2020-09-07T01:03:28.638Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 5,
+        "publishedAt": "2020-09-07T01:03:28.638Z",
+        "firstPublishedAt": "2020-09-07T01:03:28.638Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5Egd87RC54jtuJfGcZj6Kg"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5Egd87RC54jtuJfGcZj6Kg"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 6,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5Egd87RC54jtuJfGcZj6Kg"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "book"
+          }
+        }
+      },
+      "fields": {
+        "cover": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "73HCEenueawI4lloTD7ocC"
+            }
+          }
+        },
+        "title": {
+          "en-US": "Foundation's Edge"
+        },
+        "authors": {
+          "en-US": [
+            "Isaac Asimov"
+          ]
+        },
+        "description": {
+          "en-US": {
+            "data": {
+            },
+            "content": [
+              {
+                "data": {
+                },
+                "content": [
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                      {
+                        "type": "italic"
+                      }
+                    ],
+                    "value": "Foundation's Edge",
+                    "nodeType": "text"
+                  },
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                    ],
+                    "value": " (1982) is a science fiction novel by American writer Isaac Asimov, the fourth book in the ",
+                    "nodeType": "text"
+                  },
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                      {
+                        "type": "italic"
+                      }
+                    ],
+                    "value": "Foundation",
+                    "nodeType": "text"
+                  },
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                    ],
+                    "value": " Series. It was written more than thirty years after the stories of the original ",
+                    "nodeType": "text"
+                  },
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                      {
+                        "type": "italic"
+                      }
+                    ],
+                    "value": "Foundation",
+                    "nodeType": "text"
+                  },
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                    ],
+                    "value": " trilogy, due to years of pressure by fans and editors on Asimov to write another,[2] and, according to Asimov himself, the amount of the payment offered by the publisher. It was his first novel to ever land on ",
+                    "nodeType": "text"
+                  },
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                      {
+                        "type": "italic"
+                      }
+                    ],
+                    "value": "The New York Times",
+                    "nodeType": "text"
+                  },
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                    ],
+                    "value": " best-seller list, after 262 books and 44 years of writing.",
+                    "nodeType": "text"
+                  }
+                ],
+                "nodeType": "paragraph"
+              }
+            ],
+            "nodeType": "document"
+          }
+        }
+      }
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "sqsq3ermbgu4"
+          }
+        },
+        "id": "YuFnLybrJU28tn5ZFFrfD",
+        "type": "Entry",
+        "createdAt": "2020-09-07T01:03:45.639Z",
+        "updatedAt": "2020-09-07T01:05:00.811Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 4,
+        "publishedAt": "2020-09-07T01:05:00.811Z",
+        "firstPublishedAt": "2020-09-07T01:05:00.811Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5Egd87RC54jtuJfGcZj6Kg"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5Egd87RC54jtuJfGcZj6Kg"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 5,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5Egd87RC54jtuJfGcZj6Kg"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "book"
+          }
+        }
+      },
+      "fields": {
+        "cover": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "3ZFZojQrjsOg2K87S3n0ta"
+            }
+          }
+        },
+        "title": {
+          "en-US": "Foundation and Earth"
+        },
+        "authors": {
+          "en-US": [
+            "Isaac Asimov"
+          ]
+        },
+        "description": {
+          "en-US": {
+            "data": {
+            },
+            "content": [
+              {
+                "data": {
+                },
+                "content": [
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                    ],
+                    "value": "Foundation and Earth is a science fiction novel by American writer Isaac Asimov, the fifth novel of the Foundation series and chronologically the last in the series. It was published in 1986, four years after the first sequel to the Foundation trilogy, which is titled Foundation's Edge.",
+                    "nodeType": "text"
+                  }
+                ],
+                "nodeType": "paragraph"
+              }
+            ],
+            "nodeType": "document"
+          }
+        }
+      }
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "sqsq3ermbgu4"
+          }
+        },
+        "id": "3VKPTjFRhBV5N7eM3tO63S",
+        "type": "Entry",
+        "createdAt": "2020-09-07T01:30:03.351Z",
+        "updatedAt": "2020-09-07T01:33:16.584Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 10,
+        "publishedAt": "2020-09-07T01:33:16.584Z",
+        "firstPublishedAt": "2020-09-07T01:31:17.471Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5Egd87RC54jtuJfGcZj6Kg"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5Egd87RC54jtuJfGcZj6Kg"
+          }
+        },
+        "publishedCounter": 2,
+        "version": 11,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5Egd87RC54jtuJfGcZj6Kg"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "book"
+          }
+        }
+      },
+      "fields": {
+        "cover": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "Nrd7Z2uf83O0n5ujKPjus"
+            }
+          }
+        },
+        "title": {
+          "en-US": "The Gods Themselves"
+        },
+        "authors": {
+          "en-US": [
+            "Isaac Asimov"
+          ]
+        },
+        "tagLine": {
+          "en-US": "Against stupidity the gods themselves contend in vain?"
+        },
+        "description": {
+          "en-US": {
+            "data": {
+            },
+            "content": [
+              {
+                "data": {
+                },
+                "content": [
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                    ],
+                    "value": "The Gods Themselves is a 1972 science fiction novel written by Isaac Asimov. It won the Nebula Award for Best Novel in 1972, and the Hugo Award for Best Novel in 1973. The book is divided into three main parts, which were first published in Galaxy Magazine and Worlds of If as three consecutive stories.",
+                    "nodeType": "text"
+                  }
+                ],
+                "nodeType": "paragraph"
+              }
+            ],
+            "nodeType": "document"
+          }
+        }
+      }
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "sqsq3ermbgu4"
+          }
+        },
+        "id": "1tk3wWt2WenkhRH5J4O5KQ",
+        "type": "Entry",
+        "createdAt": "2020-09-07T18:50:49.882Z",
+        "updatedAt": "2020-09-07T18:51:25.086Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 3,
+        "publishedAt": "2020-09-07T18:51:25.086Z",
+        "firstPublishedAt": "2020-09-07T18:51:25.086Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5Egd87RC54jtuJfGcZj6Kg"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5Egd87RC54jtuJfGcZj6Kg"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 4,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5Egd87RC54jtuJfGcZj6Kg"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "buyLink"
+          }
+        }
+      },
+      "fields": {
+        "platform": {
+          "en-US": "Amazon"
+        },
+        "link": {
+          "en-US": "https://www.amazon.com/Prelude-Foundation-Book-1/dp/0553278398"
+        }
+      }
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "sqsq3ermbgu4"
+          }
+        },
+        "id": "6sK0lX4pqEH3Mm7ogl3L21",
+        "type": "Entry",
+        "createdAt": "2020-09-07T18:51:56.393Z",
+        "updatedAt": "2020-09-07T18:52:04.777Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 2,
+        "publishedAt": "2020-09-07T18:52:04.776Z",
+        "firstPublishedAt": "2020-09-07T18:52:04.776Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5Egd87RC54jtuJfGcZj6Kg"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5Egd87RC54jtuJfGcZj6Kg"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 3,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5Egd87RC54jtuJfGcZj6Kg"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "buyLink"
+          }
+        }
+      },
+      "fields": {
+        "platform": {
+          "en-US": "Audible"
+        },
+        "link": {
+          "en-US": "https://www.audible.com/pd/Prelude-to-Foundation-Audiobook/B005T6ZETM"
+        }
+      }
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "sqsq3ermbgu4"
+          }
+        },
+        "id": "12067JIltFpCMAnrrsIkNd",
+        "type": "Entry",
+        "createdAt": "2020-09-07T20:39:21.962Z",
+        "updatedAt": "2020-09-07T20:40:22.479Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 3,
+        "publishedAt": "2020-09-07T20:40:22.479Z",
+        "firstPublishedAt": "2020-09-07T20:40:22.479Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5Egd87RC54jtuJfGcZj6Kg"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5Egd87RC54jtuJfGcZj6Kg"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 4,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5Egd87RC54jtuJfGcZj6Kg"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "buyLink"
+          }
+        }
+      },
+      "fields": {
+        "platform": {
+          "en-US": "Amazon"
+        },
+        "link": {
+          "en-US": "https://www.amazon.com/Complete-Asimovs-Foundation-Foundations-Prelude/dp/B01EFDEMS8"
+        }
+      }
+    }
+  ],
+  "assets": [
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "sqsq3ermbgu4"
+          }
+        },
+        "id": "1GE0Qq4uDAPsq2fRJgNkxC",
+        "type": "Asset",
+        "createdAt": "2020-09-05T23:23:50.717Z",
+        "updatedAt": "2020-09-07T00:29:52.173Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 8,
+        "publishedAt": "2020-09-07T00:29:52.173Z",
+        "firstPublishedAt": "2020-09-05T23:24:12.228Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5Egd87RC54jtuJfGcZj6Kg"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5Egd87RC54jtuJfGcZj6Kg"
+          }
+        },
+        "publishedCounter": 2,
+        "version": 9,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5Egd87RC54jtuJfGcZj6Kg"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Foundation Cover"
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/sqsq3ermbgu4/1GE0Qq4uDAPsq2fRJgNkxC/bb14c603fd6a8a1c03d6ae99ecf13384/foundation.jpg",
+            "details": {
+              "size": 581846,
+              "image": {
+                "width": 1078,
+                "height": 1725
+              }
+            },
+            "fileName": "foundation.jpg",
+            "contentType": "image/jpeg"
+          }
+        }
+      }
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "sqsq3ermbgu4"
+          }
+        },
+        "id": "2o6tIeHH1KmMrf9cTORc4S",
+        "type": "Asset",
+        "createdAt": "2020-09-05T23:26:26.448Z",
+        "updatedAt": "2020-09-07T00:29:28.654Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 9,
+        "publishedAt": "2020-09-07T00:29:28.654Z",
+        "firstPublishedAt": "2020-09-05T23:27:24.099Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5Egd87RC54jtuJfGcZj6Kg"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5Egd87RC54jtuJfGcZj6Kg"
+          }
+        },
+        "publishedCounter": 2,
+        "version": 10,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5Egd87RC54jtuJfGcZj6Kg"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Foundation and Empire Cover"
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/sqsq3ermbgu4/2o6tIeHH1KmMrf9cTORc4S/7bd5ebde24faf20cda3c2e2f0c0f9853/foundation-and-empire.jpg",
+            "details": {
+              "size": 175446,
+              "image": {
+                "width": 800,
+                "height": 1356
+              }
+            },
+            "fileName": "foundation-and-empire.jpg",
+            "contentType": "image/jpeg"
+          }
+        }
+      }
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "sqsq3ermbgu4"
+          }
+        },
+        "id": "1hsxSmpt8pNqyS8DulO7Wq",
+        "type": "Asset",
+        "createdAt": "2020-09-05T23:28:29.005Z",
+        "updatedAt": "2020-09-07T00:28:55.019Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 8,
+        "publishedAt": "2020-09-07T00:28:55.019Z",
+        "firstPublishedAt": "2020-09-05T23:28:43.208Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5Egd87RC54jtuJfGcZj6Kg"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5Egd87RC54jtuJfGcZj6Kg"
+          }
+        },
+        "publishedCounter": 2,
+        "version": 9,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5Egd87RC54jtuJfGcZj6Kg"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Second Foundation Cover"
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/sqsq3ermbgu4/1hsxSmpt8pNqyS8DulO7Wq/9e3161529a4e74a031ba8b188e20a7e0/second-foundation.jpg",
+            "details": {
+              "size": 104002,
+              "image": {
+                "width": 800,
+                "height": 1365
+              }
+            },
+            "fileName": "second-foundation.jpg",
+            "contentType": "image/jpeg"
+          }
+        }
+      }
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "sqsq3ermbgu4"
+          }
+        },
+        "id": "3SwgpRhiKOvdtQQmgXjijU",
+        "type": "Asset",
+        "createdAt": "2020-09-06T01:44:32.790Z",
+        "updatedAt": "2020-09-06T01:44:54.747Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 5,
+        "publishedAt": "2020-09-06T01:44:54.747Z",
+        "firstPublishedAt": "2020-09-06T01:44:54.747Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5Egd87RC54jtuJfGcZj6Kg"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5Egd87RC54jtuJfGcZj6Kg"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 6,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5Egd87RC54jtuJfGcZj6Kg"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Isaac Asimov Headshot"
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/sqsq3ermbgu4/3SwgpRhiKOvdtQQmgXjijU/b09551a5b855ef6ae1752a94136ac596/isaac-asimov.jpg",
+            "details": {
+              "size": 376870,
+              "image": {
+                "width": 1080,
+                "height": 1440
+              }
+            },
+            "fileName": "isaac-asimov.jpg",
+            "contentType": "image/jpeg"
+          }
+        }
+      }
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "sqsq3ermbgu4"
+          }
+        },
+        "id": "4DVCCGgbpACEmYbvVczUHM",
+        "type": "Asset",
+        "createdAt": "2020-09-06T02:48:52.567Z",
+        "updatedAt": "2020-09-06T17:35:58.940Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 9,
+        "publishedAt": "2020-09-06T17:35:58.940Z",
+        "firstPublishedAt": "2020-09-06T02:49:31.748Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5Egd87RC54jtuJfGcZj6Kg"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5Egd87RC54jtuJfGcZj6Kg"
+          }
+        },
+        "publishedCounter": 2,
+        "version": 10,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5Egd87RC54jtuJfGcZj6Kg"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Foundation Banner"
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/sqsq3ermbgu4/4DVCCGgbpACEmYbvVczUHM/6c92bcf96c25e6d649a341cd19f109f4/foundation-apple.png",
+            "details": {
+              "size": 866386,
+              "image": {
+                "width": 1242,
+                "height": 653
+              }
+            },
+            "fileName": "foundation-apple.png",
+            "contentType": "image/png"
+          }
+        }
+      }
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "sqsq3ermbgu4"
+          }
+        },
+        "id": "6av1oeCKiXrOhPZPTlo8He",
+        "type": "Asset",
+        "createdAt": "2020-09-07T00:45:08.749Z",
+        "updatedAt": "2020-09-07T00:45:49.228Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 6,
+        "publishedAt": "2020-09-07T00:45:49.228Z",
+        "firstPublishedAt": "2020-09-07T00:45:49.228Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5Egd87RC54jtuJfGcZj6Kg"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5Egd87RC54jtuJfGcZj6Kg"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 7,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5Egd87RC54jtuJfGcZj6Kg"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Prelude to Foundation Cover"
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/sqsq3ermbgu4/6av1oeCKiXrOhPZPTlo8He/1253657ac792b14a489da4beaf4e9bcb/prelude-to-foundation.jpg",
+            "details": {
+              "size": 1369350,
+              "image": {
+                "width": 1000,
+                "height": 1500
+              }
+            },
+            "fileName": "prelude-to-foundation.jpg",
+            "contentType": "image/jpeg"
+          }
+        }
+      }
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "sqsq3ermbgu4"
+          }
+        },
+        "id": "4O50SXWxvMBVFdoQo4RhW8",
+        "type": "Asset",
+        "createdAt": "2020-09-07T00:53:12.423Z",
+        "updatedAt": "2020-09-07T00:53:43.880Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 6,
+        "publishedAt": "2020-09-07T00:53:43.880Z",
+        "firstPublishedAt": "2020-09-07T00:53:43.880Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5Egd87RC54jtuJfGcZj6Kg"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5Egd87RC54jtuJfGcZj6Kg"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 7,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5Egd87RC54jtuJfGcZj6Kg"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Forward the Foundation Cover"
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/sqsq3ermbgu4/4O50SXWxvMBVFdoQo4RhW8/41a786108f52ccec0d4b47c9590450d3/forward-the-foundation.jpg",
+            "details": {
+              "size": 1751715,
+              "image": {
+                "width": 1370,
+                "height": 2114
+              }
+            },
+            "fileName": "forward-the-foundation.jpg",
+            "contentType": "image/jpeg"
+          }
+        }
+      }
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "sqsq3ermbgu4"
+          }
+        },
+        "id": "73HCEenueawI4lloTD7ocC",
+        "type": "Asset",
+        "createdAt": "2020-09-07T01:03:00.856Z",
+        "updatedAt": "2020-09-07T01:03:20.019Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 4,
+        "publishedAt": "2020-09-07T01:03:20.019Z",
+        "firstPublishedAt": "2020-09-07T01:03:20.019Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5Egd87RC54jtuJfGcZj6Kg"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5Egd87RC54jtuJfGcZj6Kg"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 5,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5Egd87RC54jtuJfGcZj6Kg"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Foundation's Edge Cover"
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/sqsq3ermbgu4/73HCEenueawI4lloTD7ocC/195ca7cd91849da512b520684fd5d114/foundations-edge.jpg",
+            "details": {
+              "size": 71597,
+              "image": {
+                "width": 314,
+                "height": 512
+              }
+            },
+            "fileName": "foundations-edge.jpg",
+            "contentType": "image/jpeg"
+          }
+        }
+      }
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "sqsq3ermbgu4"
+          }
+        },
+        "id": "3ZFZojQrjsOg2K87S3n0ta",
+        "type": "Asset",
+        "createdAt": "2020-09-07T01:04:34.554Z",
+        "updatedAt": "2020-09-07T01:04:57.711Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 5,
+        "publishedAt": "2020-09-07T01:04:57.711Z",
+        "firstPublishedAt": "2020-09-07T01:04:57.711Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5Egd87RC54jtuJfGcZj6Kg"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5Egd87RC54jtuJfGcZj6Kg"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 6,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5Egd87RC54jtuJfGcZj6Kg"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Foundation and Earth Cover"
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/sqsq3ermbgu4/3ZFZojQrjsOg2K87S3n0ta/5f642455483a61b9c74b0810b40426ea/foundation-and-earth.jpg",
+            "details": {
+              "size": 963299,
+              "image": {
+                "width": 1585,
+                "height": 2560
+              }
+            },
+            "fileName": "foundation-and-earth.jpg",
+            "contentType": "image/jpeg"
+          }
+        }
+      }
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "sqsq3ermbgu4"
+          }
+        },
+        "id": "Nrd7Z2uf83O0n5ujKPjus",
+        "type": "Asset",
+        "createdAt": "2020-09-07T01:30:45.785Z",
+        "updatedAt": "2020-09-07T01:31:10.202Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 5,
+        "publishedAt": "2020-09-07T01:31:10.202Z",
+        "firstPublishedAt": "2020-09-07T01:31:10.202Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5Egd87RC54jtuJfGcZj6Kg"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5Egd87RC54jtuJfGcZj6Kg"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 6,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5Egd87RC54jtuJfGcZj6Kg"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "The Gods Themselves Cover"
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/sqsq3ermbgu4/Nrd7Z2uf83O0n5ujKPjus/5c650711f6a848b6754da7e0bf1eee08/the-gods-themselves.jpg",
+            "details": {
+              "size": 759112,
+              "image": {
+                "width": 1439,
+                "height": 2392
+              }
+            },
+            "fileName": "the-gods-themselves.jpg",
+            "contentType": "image/jpeg"
+          }
+        }
+      }
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "sqsq3ermbgu4"
+          }
+        },
+        "id": "5YDgxNC12fWYzZLCXBJRRk",
+        "type": "Asset",
+        "createdAt": "2020-09-07T02:14:40.862Z",
+        "updatedAt": "2020-09-07T02:14:59.269Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 5,
+        "publishedAt": "2020-09-07T02:14:59.269Z",
+        "firstPublishedAt": "2020-09-07T02:14:59.269Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5Egd87RC54jtuJfGcZj6Kg"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5Egd87RC54jtuJfGcZj6Kg"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 6,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5Egd87RC54jtuJfGcZj6Kg"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Foundation Splash Art"
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/sqsq3ermbgu4/5YDgxNC12fWYzZLCXBJRRk/07cd8daa21093693ad55f719122ed21e/foundation-splash-art.jpg",
+            "details": {
+              "size": 478291,
+              "image": {
+                "width": 1000,
+                "height": 557
+              }
+            },
+            "fileName": "foundation-splash-art.jpg",
+            "contentType": "image/jpeg"
+          }
+        }
+      }
+    }
+  ],
+  "locales": [
+    {
+      "name": "English (United States)",
+      "code": "en-US",
+      "fallbackCode": null,
+      "default": true,
+      "contentManagementApi": true,
+      "contentDeliveryApi": true,
+      "optional": false,
+      "sys": {
+        "type": "Locale",
+        "id": "6re0VPpZRqEOiqpffIzNkl",
+        "version": 1,
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "sqsq3ermbgu4"
+          }
+        },
+        "environment": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Environment",
+            "id": "master"
+          }
+        },
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5Egd87RC54jtuJfGcZj6Kg"
+          }
+        },
+        "createdAt": "2020-09-05T21:36:48Z",
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5Egd87RC54jtuJfGcZj6Kg"
+          }
+        },
+        "updatedAt": "2020-09-05T21:36:48Z"
+      }
+    }
+  ],
+  "webhooks": [
+    {
+      "name": "Vercel - Deploy a site",
+      "url": "https://api.vercel.com/v1/integrations/deploy/QmU955xrMfzcs9EoosZtW7y4qGJ6dWvqZGK3kV4m74k9Ze/zTzGOXV6Gx",
+      "httpBasicUsername": null,
+      "topics": [
+        "Entry.publish",
+        "Asset.publish",
+        "Entry.unpublish",
+        "Asset.unpublish"
+      ],
+      "filters": [
+        {
+          "equals": [
+            {
+              "doc": "sys.environment.sys.id"
+            },
+            "master"
+          ]
+        }
+      ],
+      "transformation": {
+        "contentType": "application/json"
+      },
+      "sys": {
+        "type": "WebhookDefinition",
+        "id": "44lcoG69JXatHtC52SZFjN",
+        "version": 0,
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "sqsq3ermbgu4"
+          }
+        },
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5Egd87RC54jtuJfGcZj6Kg"
+          }
+        },
+        "createdAt": "2020-09-07T23:41:06Z",
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5Egd87RC54jtuJfGcZj6Kg"
+          }
+        },
+        "updatedAt": "2020-09-07T23:41:06Z"
+      },
+      "headers": [
+      ]
+    }
+  ],
+  "roles": [
+    {
+      "name": "Editor",
+      "description": "Allows editing, publishing and archiving of content",
+      "policies": [
+        {
+          "effect": "allow",
+          "actions": "all",
+          "constraint": {
+            "and": [
+              {
+                "equals": [
+                  {
+                    "doc": "sys.type"
+                  },
+                  "Entry"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "effect": "allow",
+          "actions": "all",
+          "constraint": {
+            "and": [
+              {
+                "equals": [
+                  {
+                    "doc": "sys.type"
+                  },
+                  "Asset"
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "permissions": {
+        "ContentModel": [
+          "read"
+        ],
+        "Settings": [
+        ],
+        "ContentDelivery": [
+        ],
+        "Environments": [
+        ],
+        "EnvironmentAliases": [
+        ],
+        "Tags": [
+        ]
+      },
+      "sys": {
+        "type": "Role",
+        "id": "6rfY1sAigm5MG1ZlwXrS1b",
+        "version": 0,
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "sqsq3ermbgu4"
+          }
+        },
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5Egd87RC54jtuJfGcZj6Kg"
+          }
+        },
+        "createdAt": "2020-09-05T21:36:48Z",
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5Egd87RC54jtuJfGcZj6Kg"
+          }
+        },
+        "updatedAt": "2020-09-05T21:36:48Z"
+      }
+    }
+  ]
+}

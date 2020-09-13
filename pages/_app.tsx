@@ -21,7 +21,10 @@ function MyApp({ Component, pageProps }) {
         <div className="z-50 flex flex-row flex-wrap items-center justify-center px-4 py-2 text-green-800 bg-green-200 shadow-inner sm:justify-between">
           <p className="text-center">
             This is a demo site. You can get started with your own site{" "}
-            <a href="#" className="underline hover:text-green-900">
+            <a
+              href="https://authorizewebsites.com/"
+              className="underline hover:text-green-900"
+            >
               here
             </a>
             .
