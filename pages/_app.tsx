@@ -23,6 +23,8 @@ function MyApp({ Component, pageProps }) {
             This is a demo site. You can get started with your own site{" "}
             <a
               href="https://authorizewebsites.com/"
+              target="_blank"
+              rel="noopener"
               className="underline hover:text-green-900"
             >
               here
